@@ -1,0 +1,47 @@
+version: '2'
+services:
+  php:
+    image: yiisoftware/yii2-php:7.4-apache
+    # build: .
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app/web:delegated
+    ports:
+      - '80:80'
+    networks:
+     - my-network
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=cartapi
+      - MYSQL_USER=cartapi
+      - MYSQL_PASSWORD=cartapi
+      - MYSQL_ROOT_PASSWORD=qwaszx
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./_protected/data/db:/var/lib/mysql
+    networks:
+     - my-network
+  db_test:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=cartapi_test
+      - MYSQL_USER=cartapi
+      - MYSQL_PASSWORD=cartapi
+      - MYSQL_ROOT_PASSWORD=qwaszx
+    ports:
+      - '3307:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./_protected/data/db_test:/var/lib/mysql
+    networks:
+     - my-network
+networks:
+  my-network:
+    driver: bridge

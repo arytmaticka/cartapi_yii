@@ -1,0 +1,9 @@
+actor: ApiTester
+modules:
+    enabled:
+        - \Helper\Api
+        - tests\codeception\_support\FixtureHelper        
+        - REST:
+            url: http://127.0.0.1/index-test.php/api
+            depends: PhpBrowser
+            part: Json
