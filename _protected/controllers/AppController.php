@@ -4,7 +4,6 @@ namespace app\controllers;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use Yii;
 
 /**
  * AppController extends Controller and implements the behaviors() method
@@ -30,23 +29,15 @@ class AppController extends Controller
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
-                    [
-                        // other rules
-                    ],
-
                 ], // rules
-
             ], // access
-
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ], // verbs
-
         ]; // return
-
     } // behaviors
 
 } // AppController

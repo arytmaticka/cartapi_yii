@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace app\controllers\api;
 
 use Yii;
@@ -14,7 +8,7 @@ use yii\rest\IndexAction;
 /**
  * Description of ProductIndexAction
  *
- * @author propa
+ * @author Andrzej Ambroziewicz
  */
 class ProductIndexAction extends IndexAction {
 

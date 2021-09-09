@@ -13,7 +13,10 @@ use yii\filters\auth\HttpBasicAuth;
 class ProductController extends ActiveController {
 
     public $modelClass = 'app\models\Products';
-
+   
+    /**
+     * {@inheritdoc}
+     */
     public function init() {
         parent::init();
         \Yii::$app->user->enableSession = false;

@@ -5,9 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use app\controllers\AppController;
 
 /**
